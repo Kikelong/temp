@@ -48,7 +48,7 @@ if (totalSeconds % 300 <= 30 && !notificationShown) { // notificacion
     setTimeout(function() {
       notification.close();
       notificationShown = false; // restablecer la variable a false para permitir que se muestre otra notificación después de 5 minutos
-    }, 5000); // cerrar la notificación después de 5 segundos
+    }, 30000); // cerrar la notificación después de 5 segundos
   }
 }
 
