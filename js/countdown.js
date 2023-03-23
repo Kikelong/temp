@@ -1,6 +1,7 @@
 var totalSeconds;
 var intervalId;
 var sound = new Audio("alarm.mp3");
+var notificationShown = false; // variable para controlar si se ha mostrado la notificación
 // Solicitar permiso para enviar notificaciones
 Notification.requestPermission().then(function(permission) {
   console.log('Permiso de notificación:', permission);
@@ -36,13 +37,18 @@ function tick() {
     alert("¡Tiempo completado!");
   }
 
-  if (totalSeconds % 300 <= 5) { // notificacion 
+if (totalSeconds % 300 <= 30 && !notificationShown) { // notificacion 
   // Mostrar notificación
   if (Notification.permission === "granted") {
     var notification = new Notification("Temporizador", {
       body: "¡Han pasado 5 minutos!",
       icon: "luz.png"
     });
+    notificationShown = true; // establecer la variable a true para indicar que se ha mostrado la notificación
+    setTimeout(function() {
+      notification.close();
+      notificationShown = false; // restablecer la variable a false para permitir que se muestre otra notificación después de 5 minutos
+    }, 5000); // cerrar la notificación después de 5 segundos
   }
 }
 
