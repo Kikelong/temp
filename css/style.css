@@ -1,0 +1,21 @@
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 50px;
+    }
+    #countdown {
+      font-size: 36px;
+      margin-top: 50px;
+    }
+    input[type=number] {
+      font-size: 24px;
+      width: 60px;
+      text-align: center;
+      margin: 10px;
+    }
+    button {
+      font-size: 24px;
+      margin-top: 20px;
+    }
