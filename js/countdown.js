@@ -11,7 +11,7 @@ function startTimer() {
   var now = moment().utcOffset("-0500"); // hora actual en -0500 UTC
   var target = moment().utcOffset("-0500").startOf("day").add(1, "day"); // mañana a las 12 am en -0500 UTC
   var remaining = target.diff(now, "seconds");
-  totalSeconds = remaining + (1 * 60); // 5 minutos
+  totalSeconds = remaining + (0 * 60); // 5 minutos
   intervalId = setInterval(tick, 1000);
 }
 
