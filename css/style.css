@@ -1,13 +1,16 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
+         user-select: none;
     }
     h1 {
       margin-top: 50px;
     }
     #countdown {
-      font-size: 36px;
-      margin-top: 50px;
+      font-size: 40px;
+      margin-top: 20px;
+      font-weight: 700;
+       letter-spacing:2px;
     }
     input[type=number] {
       font-size: 24px;
@@ -18,4 +21,9 @@
     button {
       font-size: 24px;
       margin-top: 20px;
+    }
+
+    iframe{
+       pointer-events: none;
+
     }

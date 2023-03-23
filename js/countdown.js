@@ -22,10 +22,11 @@ function stopTimer() {
 function tick() {
   if (totalSeconds > 0) {
     totalSeconds--;
-    var hours = Math.floor(totalSeconds / 3600);
-    var minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
-    var remainingSeconds = totalSeconds % 60;
-    countdown.innerHTML = "Tiempo restante: " + hours + " horas " + minutes + " minutos " + remainingSeconds + " segundos";
+    var hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+    var minutes = Math.floor((totalSeconds - (hours * 3600)) / 60).toString().padStart(2, '0');
+    var remainingSeconds = (totalSeconds % 60).toString().padStart(2, '0');
+    countdown.innerHTML = "" + hours + ":" + minutes + ":" + remainingSeconds + "";
+    
     if (totalSeconds % 300 <= 30) { // suena la alarma cada 4.55 minutos
       sound.play();
     }
